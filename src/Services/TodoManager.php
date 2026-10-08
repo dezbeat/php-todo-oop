@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Entities\Task;
 use App\Interfaces\TodoManagerInterface;
+use Override;
 
 class TodoManager implements TodoManagerInterface
 {
@@ -37,6 +38,11 @@ class TodoManager implements TodoManagerInterface
         $this->tasks[$this->autoIncrementId] = $task;
 
         return $task;
+    }
+
+    public function getById(int $id): ?Task
+    {
+        return $this->tasks[$id] ?? null;
     }
 
     /**

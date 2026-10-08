@@ -9,6 +9,7 @@ use App\Entities\Task;
 interface TodoManagerInterface
 {
     public function add(string $title, string $description): ?Task;
+    public function getById(int $id): ?Task;
 
     /**
      * Возвращает массив объектов Task
